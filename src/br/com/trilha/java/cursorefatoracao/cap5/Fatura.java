@@ -24,9 +24,16 @@ public class Fatura {
 		this.cliente = cliente;
 	}
 
-	public double converteValor(boolean dolar) {
+	public double emDolar(){
+		double taxa = 2.7;
+		return converteValor(taxa);
+	}
+	public double emReal() {
 		double taxa = 1;
-		if (dolar) taxa = 2.7;
+		return converteValor(taxa);
+	}
+
+	private double converteValor(double taxa) {
 		return valorMensal * taxa;
 	}
 }
